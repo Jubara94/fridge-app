@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What's In My Fridge? 🍽️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <h1>What's In My Fridge? <span>🧑‍🍳</span></h1>
+      <p>Snap a pic or type ingredients—get recipes instantly!</p>
+      <!-- Add to HTML (inside <header>) -->
+<button id="clearCache" class="btn-small">Clear Cache</button>
+    </header>
+
+    <!-- Ingredient Input Section -->
+    <div class="input-section">
+      <!-- Option 1: Image Upload -->
+      <div class="upload-box">
+        <h3>📸 Snap Your Fridge</h3>
+        <input type="file" id="fridgeImage" accept="image/*" capture="environment">
+        <div class="image-preview" id="imagePreview"></div>
+        <button id="scanButton" class="btn">Scan Ingredients</button>
+      </div>
+
+      <!-- Option 2: Manual Input -->
+      <div class="manual-input">
+        <h3>✏️ Or Type Ingredients</h3>
+        <input type="text" id="ingredientInput" placeholder="e.g., chicken, tomatoes...">
+        <button id="addIngredient" class="btn">Add</button>
+        <div class="ingredient-tags" id="ingredientTags"></div>
+        <button id="findRecipes" class="btn-primary">Find Recipes!</button>
+      </div>
+    </div>
+
+    <!-- Recipe Results -->
+    <div class="results-section" id="resultsSection">
+      <h2>🍳 Suggested Recipes</h2>
+      <div class="filters">
+        <select id="cuisineFilter">
+          <option value="">All Cuisines</option>
+          <option value="italian">Italian</option>
+          <option value="mexican">Mexican</option>
+          <option value="indian">Indian</option>
+        </select>
+        <select id="dietFilter">
+          <option value="">Any Diet</option>
+          <option value="vegetarian">Vegetarian</option>
+          <option value="vegan">Vegan</option>
+          <option value="gluten-free">Gluten-Free</option>
+        </select>
+      </div>
+      <div class="recipe-grid" id="recipeGrid">
+        <!-- Recipes will populate here via API -->
+        <div class="recipe-card placeholder">
+          <p>👆 Upload ingredients to see recipes!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Built with ❤️ & 🥕 | API: <a href="https://spoonacular.com/149c0f256f7940ecb8e69828f0032fc0" target="_blank">Spoonacular</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
